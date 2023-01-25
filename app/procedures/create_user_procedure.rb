@@ -44,6 +44,7 @@ class CreateUserProcedure < ApplicationProcedure
 
   def send_welcome_mail
     # mail to user
+    CreateUserMailer.create_user_mail(user.email).deliver
   end
 
   def login_user
